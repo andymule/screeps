@@ -1,16 +1,5 @@
 var roleUpgrader = {
     run: function (creep) {
-
-        for (var spawner in Game.spawns) {
-            let thisRoom = Game.spawns[spawner].room
-            var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.room == thisRoom);
-            if (upgraders.length < 7 && !Game.spawns[spawner].spawning) {
-                var newNameU = 'Upgrader' + Game.time;
-                // console.log('Spawning new upgrader: ' + newNameU);
-                Game.spawns[spawner].spawnCreep([WORK, CARRY, MOVE], newNameU, {memory: {role: 'upgrader'}});
-            }
-        }
-
         // creep.memory.upgrading = false
         // console.log("upgrading1", creep.memory, creep.memory.upgrading, creep.store[RESOURCE_ENERGY], creep.store.getFreeCapacity() )
 
